@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Who are you?</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="content-container">
+		<div class="content">
+			<form id="RegistrationForm" name="DifficultyChoose" action="game.html" method="GET" autocomplete="off">
+				<h2 align="center">First Name</h2>
+				<input name="FirstName" type="text" class="content-container UserInfo" required pattern="^[A-Za-zА-Яа-я]{1,25}$" title="Possible symbols: a-z, A-Z, а-я, А-Я (Not more than 25 symbols)"><br>
+				<h2 align="center">Last Name</h2>
+				<input name="LastName" type="text" class="content-container UserInfo" required pattern="^[A-Za-zА-Яа-я]{1,25}$" title="Possible symbols: a-z, A-Z, а-я, А-Я (Not more than 25 symbols)"><br>
+				<h2 align="center">Email</h2>
+				<input name="Email" type="email" class="content-container UserInfo" required pattern="^.{1,30}@(mail.ru|web.de|live.jp|gmail.com|tut.by|rambler.ru)$" title="Possible emails: mail.ru, web.de, live.jp, gmail.com, tut.by, rambler.ru (Not more than 30 symbols)"><br><br>
+				<h2 align="center">Game Difficulty</h2>
+				<div class="DifficultyContainer">
+					<div class="DifficultyBlock"><input type="submit" class="content-container button DifficultyButton" value="Easy" name="Difficulty"></div>
+					<div class="DifficultyBlock"><input type="submit" class="content-container button DifficultyButton" value="Medium" name="Difficulty"></div>
+					<div class="DifficultyBlock"><input type="submit" class="content-container button DifficultyButton" value="Hard" name="Difficulty"></div>
+				</div>
+			</form>	
+		</div>
+	</div>
+
+	<script src="Logic/storage.js"></script>
+
+</body>
