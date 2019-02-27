@@ -20,8 +20,7 @@ let cardView;
 let userData = new Array();
 
 let data = window.location.search.substring(1).split('&');
-while (part = data.shift()) 
-{
+while (part = data.shift()) {
    	part = part.split('=');
    	userData.push(decodeURIComponent(part[1]));
 }
@@ -38,8 +37,7 @@ document.body.appendChild(timerValue);
 let container = document.createElement("div");
 container.id = "flex-container";
 
-switch (difficultyType)
-{
+switch (difficultyType) {
 	case 'Easy':
 		columns = 5;
 		rows = 2;
@@ -65,19 +63,16 @@ switch (difficultyType)
 
 let cardsLeftToSetValue = 0;
 let cardsToSetArr = new Array();
-while (cardsLeftToSetValue < columns * rows)
-{
+while (cardsLeftToSetValue < columns * rows) {
 	cardsToSetArr.push(cardsLeftToSetValue);
 	cardsLeftToSetValue++;
 }
 cardsLeftToSetValue--;
 
 let rowsCounter = 0;
-while (rowsCounter < rows)
-{
+while (rowsCounter < rows) {
 	let counterColumns = 0; 
-	while (counterColumns < columns)
-	{
+	while (counterColumns < columns) {
 		let containerElement = document.createElement("div");
 		containerElement.id = howToPlaceCards;
 
@@ -92,8 +87,7 @@ while (rowsCounter < rows)
 		cardsToSetArr.splice(cardToSetValue, 1);
 		cardsLeftToSetValue--;
 
-		switch (cardValue)
-		{
+		switch (cardValue) {
 			case 0:
 			case 1:
 				picture.cardPicture = "Cards/Card1.png";
@@ -144,17 +138,12 @@ while (rowsCounter < rows)
 				break;
 		}
 
-		picture.onclick = function()
-		{
-    		if (cardCurrent == -1)
-    		{
+		picture.onclick = function() {
+    		if (cardCurrent == -1) {
     			cardCurrent = this.num;
     			this.id = animationType;
     			setTimeout(firstCardPick, 1000);
-    		}
-    		else
-    			if (cardNext == -1 && this.num != cardCurrent)
-    			{
+    		} else if (cardNext == -1 && this.num != cardCurrent) {
     				cardNext = this.num;
     				this.id = animationType;
     				setTimeout(secondCardPick, 1000);
@@ -179,58 +168,43 @@ while (rowsCounter < rows)
 var heartBeatEffectID = setInterval(heartBeatEffect, 500);
 var timerID = setInterval(gameTimer, 20);
 
-function firstCardPick()
-{
+function firstCardPick() {
     cardArray[cardCurrent].picture.src = cardArray[cardCurrent].picture.cardPicture;
 	cardArray[cardCurrent].picture.id = cardView;
 }
 
-function secondCardPick()
-{
+function secondCardPick() {
     cardArray[cardNext].picture.src = cardArray[cardNext].picture.cardPicture;
 	cardArray[cardNext].picture.id = cardView;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 }
 
-function twoCardsWereChosen()
-{
-  	if (cardArray[cardNext].picture.cardPicture == cardArray[cardCurrent].picture.cardPicture)
-    {					
+function twoCardsWereChosen() {
+  	if (cardArray[cardNext].picture.cardPicture == cardArray[cardCurrent].picture.cardPicture) {					
     	cardArray[cardNext].picture.id = cardArray[cardCurrent].picture.id = "EqualCards";
     	cardCurrent = cardNext = -1;
     	cardCounter -= 2;
 
-    	if (cardCounter == 0)
-    	{
+    	if (cardCounter == 0) {
     		clearInterval(timerID);
     		clearInterval(heartBeatEffectID);
 
     		let victoryTime = timePassed / 1000;
 
-    		if (victoryTime < Number(localStorage.getItem(`Player10Time${difficultyType}`)))
-    		{
+    		if (victoryTime < Number(localStorage.getItem(`Player10Time${difficultyType}`))) {
 
-    			function changeTOPList(playerPosition, whatWasDifficulty)
-    			{
+    			function changeTOPList(playerPosition, whatWasDifficulty) {
     				let playerCounter = playerPosition;
-    				while (playerCounter > 0)
-    				{
-    					if (victoryTime < Number(localStorage.getItem(`Player${playerCounter - 1}Time${whatWasDifficulty}`)))
-    					{
+    				while (playerCounter > 0) {
+    					if (victoryTime < Number(localStorage.getItem(`Player${playerCounter - 1}Time${whatWasDifficulty}`))) {
     						playerCounter--;
-    					}
-    					else
-    					{
-    						if (playerCounter == playerPosition || (localStorage.getItem(`Player${playerCounter}Email${whatWasDifficulty}`) == playerEmail))
-    						{
+    					} else {
+    						if (playerCounter == playerPosition || (localStorage.getItem(`Player${playerCounter}Email${whatWasDifficulty}`) == playerEmail)) {
     							localStorage.setItem(`Player${playerCounter}Time${whatWasDifficulty}`, String(victoryTime));
     							localStorage.setItem(`Player${playerCounter}Email${whatWasDifficulty}`, playerEmail);
     							localStorage.setItem(`Player${playerCounter}Nick${whatWasDifficulty}`, playerNick);
-    						}
-    						else
-    						{
+    						} else {
     							let playerIDToChange = playerPosition;
-    							while (playerCounter < playerIDToChange)
-    							{
+    							while (playerCounter < playerIDToChange) {
     								localStorage.setItem(`Player${playerIDToChange}Time${whatWasDifficulty}`, localStorage.getItem(`Player${playerIDToChange - 1}Time${whatWasDifficulty}`));
     								localStorage.setItem(`Player${playerIDToChange}Email${whatWasDifficulty}`, localStorage.getItem(`Player${playerIDToChange - 1}Email${whatWasDifficulty}`));
     								localStorage.setItem(`Player${playerIDToChange}Nick${whatWasDifficulty}`, localStorage.getItem(`Player${playerIDToChange - 1}Nick${whatWasDifficulty}`));
@@ -247,12 +221,9 @@ function twoCardsWereChosen()
     			}
 
     			let checkerValue = 1;
-    			while (checkerValue <= playersTOP)
-    			{
-    				if (localStorage.getItem(`Player${checkerValue}Email${difficultyType}`) == playerEmail)
-    				{
-    					if (localStorage.getItem(`Player${checkerValue}Time${difficultyType}`) > victoryTime)
-    					{
+    			while (checkerValue <= playersTOP) {
+    				if (localStorage.getItem(`Player${checkerValue}Email${difficultyType}`) == playerEmail) {
+    					if (localStorage.getItem(`Player${checkerValue}Time${difficultyType}`) > victoryTime) {
     						changeTOPList(checkerValue, difficultyType);
     					}
 
@@ -261,8 +232,7 @@ function twoCardsWereChosen()
     				checkerValue++;
     			}
 
-    			if (checkerValue == playersTOP + 1)
-    			{
+    			if (checkerValue == playersTOP + 1) {
     				changeTOPList(playersTOP, difficultyType);
     			}
     		}
@@ -270,13 +240,10 @@ function twoCardsWereChosen()
     		
     		setTimeout(function () {youWin(victoryTime)}, 600);
     	}
-    }
-    else
-    {
+    } else {
     	cardArray[cardNext].picture.id = cardArray[cardCurrent].picture.id = animationType;
 
-    	function cardsNotEqual()
-    	{
+    	function cardsNotEqual() {
     		cardArray[cardNext].picture.src = cardArray[cardCurrent].picture.src = cardBackPicture;
     		cardArray[cardNext].picture.id = cardArray[cardCurrent].picture.id = cardView;
     		cardCurrent = cardNext = -1;
@@ -286,8 +253,7 @@ function twoCardsWereChosen()
     }
 }
 
-function youWin(recordTime)
-{	
+function youWin(recordTime) {	
 	container.id = 'dissolve';
 	let winContainer = document.createElement("div");
 	let winContainerElement = document.createElement("div");
@@ -298,42 +264,32 @@ function youWin(recordTime)
 	document.body.appendChild(winContainer);
 }
 
-function gameTimer()
-{
+function gameTimer() {
   	timePassed = Date.now() - timeGameBegan;
   	timerValue.innerHTML = String(Math.round(timePassed / 1000)) + 's'; 	
 }
 
-function heartBeatEffect()
-{
-	if (timerStateChanger == 1)
-	{
+function heartBeatEffect() {
+	if (timerStateChanger == 1) {
 		timerValue.id = "timerState1";
 		timerStateChanger--;
-	}
-	else
-	{
+	} else {
 		timerValue.id = "timerState2";
 		timerStateChanger++;
 	}
 }
 
-function randomInteger(min, max) 
-{
+function randomInteger(min, max) {
     let randNumber = min - 0.5 + Math.random() * (max - min + 1)
     randNumber = Math.round(randNumber);
     return randNumber;
 }
 
-function cardBackChanger(type)
-{
+function cardBackChanger(type) {
 	let cardID = 0;
-	while (cardID < overallCardsNumber)
-	{
-		if (cardID != cardCurrent && cardID != cardNext)
-		{
-			switch (type)
-			{
+	while (cardID < overallCardsNumber) {
+		if (cardID != cardCurrent && cardID != cardNext) {
+			switch (type) {
 				case 'CardBack1':
 					cardArray[cardID].picture.src = "Cards/CardBack1.jpg";
 					cardBackPicture = "Cards/CardBack1.jpg";

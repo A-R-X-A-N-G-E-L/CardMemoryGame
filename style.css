@@ -1,13 +1,11 @@
-body
-{
+body {
 	margin: 0px;
 	background-image: url(Image/Bg_Game.jpg);
 	background-attachment: fixed;
 	background-color: #c7b39b;
 }
 
-.content-container
-{
+.content-container {
 	margin-left: 30%;
 	margin-right: 30%;
 	margin-top: 7%;
@@ -16,28 +14,24 @@ body
 	box-shadow: inset 0 0 2em gold, 0 0 1em red, 0 0 10em green;
 }
 
-.content
-{
+.content {
 	padding: 10%;
 	color: gold;
 	text-shadow: 0 0 2em red, 0 0 2em red, 0 0 2em red;
 }
 
-.content-container .content li
-{
+.content-container .content li {
 	font-size: 24px;
 }
 
-.main-page-container
-{
+.main-page-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-right: 10%;
 }
 
-.button
-{
+.button {
 	margin-right: 50%;
 	width: 100px;
 	height: 60px;
@@ -52,15 +46,13 @@ body
 	margin-left: 40%;
 }
 
-.button:hover
-{
+.button:hover {
 	background-color: maroon;
 	transform: rotate(720deg);
 	color: silver;
 }
 
-.UserInfo
-{
+.UserInfo {
 	margin-top: 0;
 	margin-bottom: 3%;
 	margin-left: 22%;
@@ -77,33 +69,28 @@ body
 	text-shadow: 0 0 1em red;
 }
 
-.UserInfo:focus
-{
+.UserInfo:focus {
 	background-color: rgba(255, 0, 0, 0.7);
 	box-shadow: inset 0 0 2em black, 0 0 2em red;
 	text-shadow: 0 0 1em black;
 }
 
-.DifficultyContainer
-{
+.DifficultyContainer {
 	display: flex;
 	margin-left: 10%;
 }
 
-.DifficultyBlock
-{
+.DifficultyBlock {
 	flex-basis: 33%;
 }
 
-.DifficultyButton
-{
+.DifficultyButton {
 	padding: 0;
 	margin: 0;
 	width: 80%;
 }
 
-#CardDesign
-{
+#CardDesign {
 	margin-top: 50px;
 	margin-bottom: 30px;
 	width: 240px;
@@ -113,8 +100,7 @@ body
 	box-shadow: 0 0 1em red, 0 0 2em maroon;
 }
 
-#CardDesignMini
-{
+#CardDesignMini {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 190px;
@@ -124,8 +110,7 @@ body
 	box-shadow: 0 0 1em red, 0 0 2em maroon;
 }
 
-#CardDesignMiniMini
-{
+#CardDesignMiniMini {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 180px;
@@ -135,15 +120,13 @@ body
 	box-shadow: 0 0 1em red, 0 0 2em maroon;
 }
 
-#EqualCards
-{
+#EqualCards {
 	width: 0px;
 	height: 0px;
 	transition: 0.7s;
 }
 
-#Action
-{
+#Action {
 	margin-top: 50px;
 	margin-bottom: 30px;	
 	width: 0px;
@@ -151,8 +134,7 @@ body
 	transition: 1.0s;
 }
 
-#ActionMini
-{
+#ActionMini {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	width: 0px;
@@ -169,8 +151,7 @@ body
 	transition: 1.0s;
 }
 
-#flex-container
-{
+#flex-container {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -180,40 +161,33 @@ body
 	margin-right: 1%;
 	border-radius: 20px;
 	background-color: rgba(0, 0, 0, 0.8);
-
 	/*Подключение уменьшит плавность переворота картинок(на слабых пк), но подключит свечение заднего фона в игре*/
 	/*box-shadow: inset 0 0 2em gold, 0 0 1em red, 0 0 10em green;*/
 	/*************************************************************/
-
 	transition: 0.5s;
 }
 
-#flex-item
-{
+#flex-item {
 	flex-basis: 16%;
 	margin-left: 3.6%;
 }
 
-#flex-item-mini
-{
+#flex-item-mini {
 	flex-basis: 14.2%;
 	margin-left: 2.45%;
 }
 
-#flex-item-mini-mini
-{
+#flex-item-mini-mini {
 	flex-basis: 11.5%;
 	margin-left: 1%;
 }
 
-#dissolve
-{
+#dissolve {
 	height: 0px;
 	transition: 1s;
 }
 
-#timerState1
-{
+#timerState1 {
 	font-size: 20px;
 	padding-left: 0.5%;
 	margin-left: 94.2%;
@@ -227,8 +201,7 @@ body
 	transition: 0.5s;
 }
 
-#timerState2
-{
+#timerState2 {
 	font-size: 20px;
 	padding-left: 0.5%;
 	margin-left: 94.2%;
@@ -242,8 +215,7 @@ body
 	transition: 0.5s;
 }
 
-.Card1
-{
+.Card1 {
 	background: url(Cards/CardBack1.jpg) no-repeat;
 	background-size: contain;
 	margin-left: -100%;
@@ -252,8 +224,7 @@ body
     border: none;
 }
 
-.Card2
-{
+.Card2 {
 	background: url(Cards/CardBack2.jpg) no-repeat;
 	background-size: contain;
 	margin-left: -97%;
@@ -262,8 +233,7 @@ body
     border: none;
 }
 
-.Card3
-{
+.Card3 {
 	background: url(Cards/CardBack3.jpg) no-repeat;
 	background-size: contain;
 	margin-left: -95%;
@@ -272,8 +242,7 @@ body
     border: none;
 }
 
-.Card4
-{
+.Card4 {
 	background: url(Cards/CardBack4.jpg) no-repeat;
 	background-size: contain;
 	margin-left: -116%;
@@ -282,8 +251,7 @@ body
     border: none;
 }
 
-.Card5
-{
+.Card5 {
 	background: url(Cards/CardBack5.jpg) no-repeat;
 	background-size: contain;
 	margin-left: -93%;
@@ -292,8 +260,7 @@ body
     border: none;
 }
 
-.Card6
-{
+.Card6 {
 	background: url(Cards/CardBack6.jpg) no-repeat;
 	background-size: contain;
 	margin-left: -108%;
@@ -302,8 +269,7 @@ body
     border: none;
 }
 
-.menu
-{
+.menu {
 	position: absolute;
 	font-size: 20px;
 	padding-left: 0.5%;
@@ -318,8 +284,7 @@ body
 	list-style: none;
 }
 
-ul.submenu
-{
+ul.submenu {
 	background-color: red;
 	box-shadow: inset 0 0 2em gold, 0 0 1em red, 0 0 5em green;
 	position: absolute;
@@ -327,29 +292,24 @@ ul.submenu
 	width: 200px;
 }
 
-.menu .submenu
-{
+.menu .submenu {
 	display: none;
 }
 
-.menu > li:hover .submenu
-{
+.menu > li:hover .submenu {
 	margin-left: 0.6%;
 	display: flex;
 }
 
-.SkinContainer
-{
+.SkinContainer {
 	display: flex;
 }
 
-.SkinContent
-{
+.SkinContent {
 	flex-basis: 25%;
 }
 
-#content-container-win
-{
+#content-container-win {
 	display: flex;
 	margin-left: 30%;
 	margin-right: 30%;
@@ -361,15 +321,13 @@ ul.submenu
 	box-shadow: inset 0 0 2em gold, 0 0 1em red, 0 0 10em green;
 }
 
-#content-win
-{
+#content-win {
 	padding: 10%;
 	color: gold;
 	text-shadow: 0 0 2em red, 0 0 2em red, 0 0 2em red;
 }
 
-#records-container
-{
+#records-container {
 	display: flex;
 	margin-left: 30%;
 	margin-right: 30%;
@@ -381,22 +339,19 @@ ul.submenu
 	box-shadow: inset 0 0 2em gold, 0 0 1em red, 0 0 10em green;
 }
 
-#records-content
-{
+#records-content {
 	padding: 7%;
 	color: gold;
 	text-shadow: 0 0 2em red, 0 0 2em red, 0 0 2em red;
 }
 
-#table
-{
+#table {
 	border-color: gold;
 	box-shadow: inset 0 0 2em gold, 0 0 5em red, 0 0 10em green;
 	border-spacing: 0;
 }
 
-#records-button
-{
+#records-button {
 	height: 60px;
 	width: 100px;
 	border-radius: 10px;
@@ -411,23 +366,20 @@ ul.submenu
 	margin-top: 3%;
 }
 
-#records-button:hover
-{
+#records-button:hover {
 	background-color: maroon;
 	transform: rotate(720deg);
 	color: silver;
 }
 
-th
-{
+th {
 	padding: 30px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	font-size: 20px;
 }
 
-.content-container li::before 
-{
+.content-container li::before {
 	content: counter(li); 
 	color: gold;
   	display: inline-block; 
@@ -436,18 +388,15 @@ th
   	text-shadow: 0 0 2em red, 0 0 2em red, 0 0 2em red, 0 0 2em red, 0 0 2em red;
 }
 
-.content-container li 
-{
+.content-container li {
 	counter-increment: li;
 }
 
-.content-container ol 
-{
+.content-container ol {
 	list-style: none;
 }
 
-#table-name
-{
+#table-name {
 	margin: 0;
 	margin-bottom: 2%; 
 	font-size: 20px;

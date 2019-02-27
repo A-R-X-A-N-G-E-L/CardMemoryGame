@@ -1,5 +1,4 @@
-function createRecordsTable(difficulty)
-{
+function createRecordsTable(difficulty) {
 	var cell;
 
 	let container = document.createElement("div");
@@ -41,8 +40,7 @@ function createRecordsTable(difficulty)
 	table.appendChild(row);
 
 	let playerCounter = 1;	
-	while (playerCounter <= 10)
-	{
+	while (playerCounter <= 10) {
 		let row = document.createElement("tr");
 
 		cell = document.createElement("th");
